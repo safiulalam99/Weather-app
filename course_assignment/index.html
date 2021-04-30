@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html> 
+    <head>    
+    <link rel="stylesheet" type="text/css" href="index.css">   
+  <script src="index.js" ></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js"></script>
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>   
+<body> 
+  <h1 id="v1"></h1>
+
+
+ <form autocomplete="off">
+      <div id="form-group">
+        <i class="fa fa-search"></i>
+        <input type="text"  id="searchdata" placeholder="Enter Measurement type">
+        
+      </div>
+    </form>
+    <button id="sorting">SORT BY VALUE</button>
+    
+    
+    <div class="view_tab">
+  <ul>
+      <li><a onclick="changeView(1)">View 1</a></li>
+      <li><a  onclick="changeView(2)">View 2</a></li>
+      <li><a  onclick="changeView(3)">View 3</a></li>
+      <li><a onclick="changeView(4)">View 4</a></li>
+    </ul>
+  </div>
+
+    <div id="chartContainer" > 
+      <canvas id="myChart"width="100" height="50"></canvas>  
+    </div>
+
+    <div id="interval2">
+    <select id="int22" onchange ="getTemperature(this.value,'bar','25')">
+    <option value=" ">Time Interval</option>  
+    <option value=" ">Now</option>
+    <option value="23">24hrs</option>
+    <option value="47">48hrs</option>
+    <option value="71">72hrs</option>
+    <option value="167">Week</option>
+    <option value="729">Month</option>
+  </select>
+  </div>
+
+  <div id="interval3">
+    <select id="int33" onchange ="getWind_speed(this.value,'bar')">
+    <option value=" ">Time Interval</option>  
+    <option value=" ">Now</option>
+    <option value="23">24hrs</option>
+    <option value="47">48hrs</option>
+    <option value="71">72hrs</option>
+    <option value="167">Week</option>
+    <option value="729">Month</option>
+  </select>
+  </div>
+  <div id="fourth">
+  <div id="viewOptions">
+    <select id="measurements_view" onchange ="select_measurement(this.value,' ')">
+    <option value="1">Mesurement </option>  
+    <option value="1">Temperature</option>
+    <option value="2">Wind Speed</option>
+    <option value="3">Wind Direction</option>
+    <option value="4">Light</option>
+    <option value="5">Rain</option>
+  </select>
+  </div>
+
+  <div id="interval4">
+    <select id="int44" onchange ="select_measurement(' ',this.value)">
+    <option value=" ">Now</option>
+    <option value="23">24hrs</option>
+    <option value="47">48hrs</option>
+    <option value="71">72hrs</option>
+    <option value="167">Week</option>
+    <option value="729">Month</option>
+  </select>
+  </div>
+</div>
+  <div class="printTable">
+    <table id="dataTable"></table>
+  </div>
+
+  </body>
+  </html>
